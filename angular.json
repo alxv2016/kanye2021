@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "kanye2021"
+  "defaultProject": "kanye2021",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
