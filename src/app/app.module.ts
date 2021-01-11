@@ -8,6 +8,8 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
 import {StoreModule} from '@ngrx/store';
 import {reducers, metaReducers} from './store';
+import {EffectsModule} from '@ngrx/effects';
+import {QuotesEffects} from './store/effects/quotes.effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +20,7 @@ import {reducers, metaReducers} from './store';
     StoreModule.forRoot(reducers, {metaReducers}),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
+    EffectsModule.forRoot([QuotesEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent],

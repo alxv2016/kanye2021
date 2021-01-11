@@ -22,10 +22,7 @@ export class KanyeService {
         map((quotes) => {
           const kanyeQuotes: KanyeQuotes = {
             quote: quotes.quote,
-            author: 'Kanye West',
             image: `ye-${this.generateRandomNumber(1, 6)}`,
-            loading: false,
-            error: false,
           };
           return kanyeQuotes;
         })
