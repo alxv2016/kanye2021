@@ -32,3 +32,8 @@ export const reducer = createReducer(
   on(fromQuoteActions.loadQuotesSuccess, (state, {quote}) => ({...state, ...quote, loading: false})),
   on(fromQuoteActions.loadQuotesFailure, (state) => ({...state, error: true}))
 );
+
+/* NOTE: this additional wrapper function is no longer required as of Angular 10 with Ivy or JIT compilation */
+// export function reducer(state: State | undefined, action: Action) {
+//   return reducer(state, action);
+// }

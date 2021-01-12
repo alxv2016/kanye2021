@@ -1,6 +1,8 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
-import {AppState} from '..';
 import {quotesFeatureKey, State} from '../reducers/quotes.reducer';
+import {AppState} from '..';
 
-export const selectQuotesFeature = createFeatureSelector<State>(quotesFeatureKey);
+// Type safe feature State that is only available in AppState below
+export const selectQuotesFeature = createFeatureSelector<AppState, State>(quotesFeatureKey);
+// Select a slice of the feature state
 export const selectQuote = createSelector(selectQuotesFeature, (state: State) => state.quote);
