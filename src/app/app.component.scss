@@ -1,0 +1,12 @@
+@import '../scss/globals';
+:host {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  @include breakpoint(md) {
+    align-items: center;
+  }
+}

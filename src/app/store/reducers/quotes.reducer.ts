@@ -15,12 +15,12 @@ export interface State extends KanyeQuotes {
 }
 
 export const initialState: State = {
-  headline: '',
-  button: '',
-  splyCode: '',
-  uspeCode: '',
+  headline: "What's on Ye's mind...",
+  button: 'Click me',
+  splyCode: 'SPLY-2021',
+  uspeCode: 'SPLY-2021',
   quote: null,
-  author: '',
+  author: 'Kanye West',
   image: 'ye-1',
   loading: false,
   error: false,

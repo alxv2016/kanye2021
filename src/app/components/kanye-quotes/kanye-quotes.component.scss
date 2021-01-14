@@ -1,0 +1,95 @@
+@import '../../../scss/globals';
+
+:host-context(.kanye-quote-card) {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all 320ms ease;
+  right: 0;
+  z-index: 2;
+  border-radius: 1rem;
+  background-color: color('boost');
+  width: 100%;
+  height: auto;
+  padding: $spacing--lg;
+  transform: translateX(0);
+  @include elevate-2(color('dark'), 0.145);
+  @include breakpoint(sm) {
+    padding: $spacing--xl;
+  }
+  @include breakpoint(md) {
+    transform: translateX(44px);
+  }
+  @include breakpoint(lg) {
+    transform: translateX(68px);
+  }
+}
+
+.kanye-quote-icon {
+  position: relative;
+  flex-shrink: 0;
+  top: -28px;
+  fill: color('accent');
+  height: auto;
+  width: 68px;
+  @include breakpoint(md) {
+    top: -48px;
+  }
+  &--loading {
+    animation: scaleIn 675ms ease both;
+  }
+}
+
+.kanye-quote-card {
+  &__footer {
+    position: relative;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__author {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 24px;
+    font-size: $subtitle;
+    line-height: 1.1;
+    font-weight: font-weight('medium');
+    font-family: font-family('abril'), cursive;
+  }
+
+  &__profile {
+    position: relative;
+    height: 54px;
+    width: 54px;
+    flex-shrink: 0;
+    border-radius: 90px;
+    overflow: hidden;
+    border: 4px solid color('accent');
+    img {
+      opacity: 1;
+    }
+    @include breakpoint(sm) {
+      height: 64px;
+      width: 64px;
+    }
+  }
+}
+
+.kanye-quote-block {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-left: 18px;
+  margin-bottom: $spacing--lg;
+  min-height: 28px;
+  &__quote {
+    font-size: 1rem;
+    margin: 0;
+    opacity: 1;
+  }
+}

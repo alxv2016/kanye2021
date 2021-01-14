@@ -10,6 +10,7 @@ import {StoreModule} from '@ngrx/store';
 import {reducers, metaReducers} from './store';
 import {EffectsModule} from '@ngrx/effects';
 import {QuotesEffects} from './store/effects/quotes.effects';
+import {KanyeModule} from './components/kanye.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import {QuotesEffects} from './store/effects/quotes.effects';
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
     EffectsModule.forRoot([QuotesEffects]),
+    KanyeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
