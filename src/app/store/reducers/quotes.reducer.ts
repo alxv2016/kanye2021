@@ -15,8 +15,8 @@ export interface State extends KanyeQuotes {
 }
 
 export const initialState: State = {
-  headline: "What's on Ye's mind...",
-  button: 'Click me',
+  headline: "What's on Ye's mind?",
+  button: 'Preach!',
   splyCode: 'SPLY-2021',
   uspeCode: 'SPLY-2021',
   quote: null,

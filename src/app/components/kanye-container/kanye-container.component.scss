@@ -1,23 +1,22 @@
 @import '../../../scss/globals';
 :host {
   position: relative;
-  padding: $spacing--lg;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 $spacing--lg;
   width: 100%;
+  height: 100%;
   max-width: 900px;
-  min-height: 88px;
 }
 
 .kanye-footer {
   position: relative;
-  z-index: 0;
-  transition: transform 225ms ease;
-  transform: translateY(-8px);
+  top: -8px;
+  z-index: -1;
   width: 100%;
-  margin-bottom: $spacing--lg;
-  @include breakpoint(sm) {
-    transform: translateY(-28px);
-  }
-  @include breakpoint(lg) {
-    transform: translateY(-32px);
+  @include breakpoint(md) {
+    top: -16px;
   }
 }

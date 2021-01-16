@@ -10,6 +10,7 @@ $max-content-width: 992px !default;
 $font-families: (
   abril: 'Abril Fatface',
   roboto: 'Roboto',
+  mono: 'Roboto Mono',
 ) !default;
 // Icon sizes
 $icon-sizes: (
@@ -35,10 +36,12 @@ $breakpoints: (
 ) !default;
 // Colors
 $colors: (
+  alxv: #400c2f,
+  alxvaccent: #fe5758,
   boost: #f8f8f9,
   dark: #131313,
   lighttan: #ecece2,
-  darktan: #c2c0bb,
+  darktan: #afaeaa,
   offtan: #cdcbc5,
   accent: #ffb147,
   accent2: #d7e8af,

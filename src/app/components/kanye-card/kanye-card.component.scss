@@ -1,5 +1,4 @@
 @import '../../../scss/globals';
-
 :host-context(.kanye-card) {
   position: relative;
   z-index: 1;
@@ -10,8 +9,29 @@
   width: 100%;
   height: auto;
   background-color: color('boost');
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    overflow: hidden;
+  }
+  &::before {
+    background-repeat: repeat;
+    background-image: url('../../../assets/boost_texture.png');
+    opacity: 0.275;
+  }
+  &::after {
+    background: linear-gradient(165deg, rgba(white, 0) 5%, rgba(white, 1) 100%);
+  }
   @include breakpoint(md) {
     height: 520px;
+    padding: $spacing--3xl;
   }
   @include elevate-5(color('dark'), 0.145);
 }
@@ -22,17 +42,22 @@
 
 .alxv-brand {
   height: 18px;
-  width: auto;
-  fill: color('dark');
+  width: 54px;
+  fill: color('alxv');
+  &-accent {
+    fill: color('alxvaccent');
+  }
 }
 
 .kanye-code {
   display: inline-block;
   user-select: none;
   flex-shrink: 0;
-  font-size: $overline;
+  font-size: $body--1;
+  line-height: 1.25;
   font-weight: font-weight('medium');
   font-family: font-family('mono'), monospace;
+  color: color('darktan');
 }
 
 .kanye-code-bars {
@@ -41,31 +66,27 @@
   span {
     display: inline-block;
     height: 2px;
-    width: 12px;
+    width: 16px;
     background-color: color('militarygreen');
-    @include breakpoint(sm) {
+    @include breakpoint(md) {
       width: 24px;
     }
     &:nth-child(1) {
       margin-left: 8px;
       margin-right: 8px;
-      @include breakpoint(sm) {
-        margin-left: 18px;
-        margin-right: 18px;
-      }
     }
     &:nth-child(2) {
-      width: 32px;
-      @include breakpoint(sm) {
+      width: 64px;
+      @include breakpoint(md) {
         width: 128px;
       }
       background-color: color('accent');
       margin-right: 8px;
     }
     &:nth-child(3) {
-      width: 16px;
-      @include breakpoint(sm) {
-        width: 32px;
+      width: 32px;
+      @include breakpoint(md) {
+        width: 64px;
       }
       background-color: color('accent2');
     }
@@ -77,6 +98,8 @@
   display: flex;
   flex-grow: 1;
   width: 100%;
+  height: 100%;
+  align-items: center;
   flex-direction: column;
   @include breakpoint(md) {
     flex-direction: row;
@@ -109,54 +132,28 @@
   &__column {
     position: relative;
     display: flex;
+    flex-shrink: 0;
     flex-direction: column;
     justify-content: center;
-    padding: $spacing--lg 0;
     width: 100%;
     @include breakpoint(md) {
-      padding: $spacing--lg;
-      padding-left: $spacing--xl;
       width: 50%;
-    }
-    &-header {
-      position: relative;
-      padding-left: 28px;
-      width: 100%;
-      margin-bottom: $spacing--xl;
-      @include breakpoint(md) {
-        margin-bottom: $spacing--2xl;
-      }
-      h1 {
-        margin: 0;
-        font-size: $title--1;
-        line-height: 1;
-        font-family: font-family('abril'), cursive;
-        font-weight: font-weight('medium');
-        @include breakpoint(sm) {
-          font-size: $large--title;
-        }
-      }
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 10px;
-        background-color: color('dark');
-      }
     }
   }
   &__column-quote {
     position: relative;
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
     margin: $spacing--xl 0;
     width: 100%;
     @include breakpoint(md) {
+      width: 57%;
+    }
+    @include breakpoint(lg) {
       margin: 0;
-      width: 50%;
+      width: 60%;
     }
   }
 }
@@ -164,7 +161,6 @@
 .kanye-card {
   &__header {
     position: relative;
-    padding-top: $spacing--lg;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -200,22 +196,45 @@
   }
 }
 
-.kanye-btn {
-  @include button-reset;
-  height: 48px;
-  padding: $spacing--sm $spacing--xl;
-  border-radius: 8px;
-  color: color('boost');
-  font-weight: font-weight('medium');
-  background-color: color('dark');
-  flex-shrink: 0;
-  transform: scale(1);
-  transition: transform 275ms ease;
-  @include on-focus() {
-    background-color: color('dark');
-    transform: scale(0.98);
+.kanyes-mind {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: $spacing--lg 0;
+  @include breakpoint(md) {
+    padding: $spacing--lg;
   }
-  @include breakpoint(sm) {
-    margin-right: auto;
+  h1 {
+    z-index: 3;
+    margin: 0;
+    font-size: $large--title;
+    line-height: 1.15;
+    font-family: font-family('abril'), cursive;
+    font-weight: font-weight('medium');
+    @include breakpoint(md) {
+      font-size: $huge--title;
+    }
+  }
+}
+
+.wave {
+  position: absolute;
+  height: 320px;
+  width: 320px;
+  //left: -60px;
+  border: 0.75px solid black;
+  opacity: 0.45;
+  border-radius: 900px;
+  & ~ .wave {
+    height: 220px;
+    width: 220px;
+
+    & ~ .wave {
+      height: 140px;
+      width: 140px;
+    }
   }
 }
