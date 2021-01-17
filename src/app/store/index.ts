@@ -5,7 +5,7 @@ import * as fromPolling from './reducers/polling.reducer';
 
 export interface AppState {
   [fromQuotes.quotesFeatureKey]: fromQuotes.State;
-  [fromPolling.pollingFeatureKey]: fromPolling.State;
+  [fromPolling.pollingFeatureKey]: fromPolling.PollingState;
 }
 export const reducers: ActionReducerMap<AppState> = {
   [fromQuotes.quotesFeatureKey]: fromQuotes.reducer,

@@ -11,6 +11,7 @@ import {Component, OnInit} from '@angular/core';
         />
       </svg>
     </div>
+    <ng-content select="progress-bar"></ng-content>
   `,
   styleUrls: ['./kanye-container.component.scss'],
 })
