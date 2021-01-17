@@ -19,10 +19,11 @@ export class PollingService {
           this.stop.next();
           this.start.next();
         }
+        let percentage = Math.floor((seconds / duration) * 100);
         const timer = {
           duration: duration,
           seconds: seconds,
-          percent: Math.floor((seconds / duration) * 100),
+          percent: percentage <= 100 ? percentage : (percentage = 100),
         };
         return timer;
       })
