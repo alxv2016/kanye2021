@@ -2,6 +2,6 @@
   <kanye-card [data]="kanye">
     <kanye-quotes [data]="kanye"></kanye-quotes>
   </kanye-card>
-  <progress-bar *ngIf="timer$ | async as time" [currentValue]="time.percent"></progress-bar>
+  <progress-bar [currentValue]="progress"></progress-bar>
 </kanye-container>
 <router-outlet></router-outlet>

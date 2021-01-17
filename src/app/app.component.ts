@@ -4,9 +4,8 @@ import {Observable} from 'rxjs';
 import {AppState} from './store';
 import {loadPollings, stopPolling} from './store/actions/polling.actions';
 import {loadQuotes} from './store/actions/quotes.actions';
-import {PollingState} from './store/reducers/polling.reducer';
 import {State} from './store/reducers/quotes.reducer';
-import {selectPollingFeature} from './store/selectors/polling.selectors';
+import {selectPollingPercent} from './store/selectors/polling.selectors';
 import {selectQuotesFeature} from './store/selectors/quotes.selectors';
 
 @Component({
@@ -15,19 +14,20 @@ import {selectQuotesFeature} from './store/selectors/quotes.selectors';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'kanye2021';
+  title = 'Kanye West 2021';
+  progress = 0;
   state$: Observable<State> | undefined;
-  timer$: Observable<PollingState> | undefined;
+  timer$: Observable<number> | undefined;
 
   constructor(private store: Store<AppState>) {}
   ngOnInit() {
     this.store.dispatch(loadQuotes());
-    this.store.dispatch(loadPollings({duration: 60}));
+    this.store.dispatch(loadPollings({duration: 40}));
     this.state$ = this.store.pipe(select(selectQuotesFeature));
-    this.timer$ = this.store.pipe(select(selectPollingFeature));
-    this.state$.subscribe((data) => console.log(data));
-    this.timer$.subscribe((timer) => {
-      if (timer.percent === 100) {
+    this.timer$ = this.store.pipe(select(selectPollingPercent));
+    this.timer$.subscribe((per) => {
+      this.progress = per;
+      if (per >= 100) {
         this.store.dispatch(loadQuotes());
       }
     });

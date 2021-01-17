@@ -13,7 +13,7 @@ export class QuotesEffects {
       mergeMap((m) =>
         this.service.getQuotes().pipe(
           // faking slower server response time for the purpose of demoing loading
-          delay(675),
+          delay(1000),
           map((quote) => fromQuotesActions.loadQuotesSuccess({quote: quote})),
           catchError(() => of(fromQuotesActions.loadQuotesFailure({error: true})))
         )
