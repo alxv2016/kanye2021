@@ -11,6 +11,7 @@ import {reducers, metaReducers} from './store';
 import {EffectsModule} from '@ngrx/effects';
 import {QuotesEffects} from './store/effects/quotes.effects';
 import {KanyeModule} from './components/kanye.module';
+import {PollingEffects} from './store/effects/polling.effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +22,7 @@ import {KanyeModule} from './components/kanye.module';
     StoreModule.forRoot(reducers, {metaReducers}),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
-    EffectsModule.forRoot([QuotesEffects]),
+    EffectsModule.forRoot([QuotesEffects, PollingEffects]),
     KanyeModule,
   ],
   providers: [],

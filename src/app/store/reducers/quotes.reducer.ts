@@ -6,9 +6,7 @@ export const quotesFeatureKey = 'quotes';
 
 export interface State extends KanyeQuotes {
   headline: string;
-  button: string;
   splyCode: string;
-  uspeCode: string;
   author: string;
   loading: boolean;
   error: boolean;
@@ -16,9 +14,7 @@ export interface State extends KanyeQuotes {
 
 export const initialState: State = {
   headline: "What's on Ye's mind?",
-  button: 'Preach!',
   splyCode: 'SPLY-2021',
-  uspeCode: 'SPLY-2021',
   quote: null,
   author: 'Kanye West',
   image: 'ye-1',
