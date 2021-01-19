@@ -1,5 +1,5 @@
 # Kanye 2021
-A fun small project that pulls random Kanye West quotes from kanye.rest api.  This project was meant to be a refresh into ngrx management and a redesign of my Kanye2020 angular app.  Build with latest Angular 11 and NGRX with integration of gsap for animations.
+A fun small project that pulls random Kanye West quotes from kanye.rest api.  This project was meant to be a refresher intro to ngrx state management and a redesign of my Kanye2020 angular app.  Build with latest Angular 11 and NGRX with integration of gsap for animations.
 
 ## Demo
 You can view the demo here:
