@@ -35,14 +35,16 @@ export class KanyeCardComponent implements OnInit, AfterViewInit {
     const waves = this.waves.map((wave) => wave.nativeElement);
     const playWaves = gsap.from(waves, {
       ease: 'back',
-      stagger: 0.145,
-      scale: 0.45,
+      stagger: 0.175,
+      scale: 0.25,
+      yPercent: 60,
       opacity: 0,
-      yoyo: true,
     });
     this.loading$?.subscribe((bool) => {
       if (bool) {
-        playWaves.restart();
+        playWaves.play();
+      } else {
+        playWaves.reverse();
       }
     });
   }
