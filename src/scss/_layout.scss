@@ -20,26 +20,6 @@
   border-radius: 0.25rem;
 }
 
-.asset--loading {
-  &::after {
-    content: '';
-    position: absolute;
-    z-index: 4;
-    transition: opacity 325ms ease;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    border-radius: inherit;
-    background-color: color('lighttan');
-    overflow: hidden;
-  }
-  animation: scaleIn 675ms ease both;
-  img {
-    opacity: 0;
-  }
-}
-
 @keyframes placeHolderShimmer {
   0% {
     background-position: -468px 0;
