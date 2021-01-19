@@ -13,6 +13,9 @@
 
 .kanye-footer {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   top: -8px;
   z-index: -1;
   width: 100%;
