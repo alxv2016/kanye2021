@@ -1,27 +1,27 @@
-# Kanye2021
+# Kanye 2021
+A fun small project that pulls random Kanye West quotes from kanye.rest api.  This project was meant to be a refresh into ngrx management and a redesign of my Kanye2020 angular app.  Build with latest Angular 11 and NGRX with integration of gsap for animations.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
+## Demo
+You can view the demo here:
+[Kanye 2021](https://kanye.alxvtoronto.com)
 
-## Development server
+## Take aways
+1. Refresher on Angular 11
+2. Refresher on state management and NGRX
+3. Integration with GSAP in Angular for animations
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Libraries used
+Libraries being used
+1. gsap - [gsap](https://greensock.com/gsap/)
+2. ngrx - [ngrx](https://ngrx.io)
 
-## Code scaffolding
+## Dev and Build scripts
+```
+ng serve
+```
+```
+ng build
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Original design as well as a codepen for Kanye 2020 can be viewed on my dribbble profile follow this link:
+[Kanye 2020](https://dribbble.com/shots/9492310-Kanye-for-president)
