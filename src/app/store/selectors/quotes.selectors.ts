@@ -6,3 +6,5 @@ import {AppState} from '..';
 export const selectQuotesFeature = createFeatureSelector<AppState, State>(quotesFeatureKey);
 // Select a slice of the feature state
 export const selectQuote = createSelector(selectQuotesFeature, (state: State) => state.quote);
+
+export const selectLoadingStatus = createSelector(selectQuotesFeature, (state: State) => state.loading);
